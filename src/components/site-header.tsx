@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useSyncExternalStore } from "react";
 import { logoHorizontal } from "@/content/logo";
-import { site, mailto } from "@/content/site";
+import { site } from "@/content/site";
 
 function subscribe(onChange: () => void) {
   window.addEventListener("scroll", onChange, { passive: true });
@@ -47,10 +47,10 @@ export function SiteHeader() {
             Contacto
           </a>
           <a
-            href={mailto}
+            href="#contacto"
             className="ml-2 hidden rounded-xl bg-white px-5 py-3 font-semibold text-ink transition-colors hover:bg-cyan lg:inline-block"
           >
-            Escribir un correo
+            Solicitar Asesoría
           </a>
         </nav>
       </div>

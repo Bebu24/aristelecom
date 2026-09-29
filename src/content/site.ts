@@ -10,8 +10,6 @@ export const site = {
 export const mailto = `mailto:${site.email}`;
 
 export const facts = [
-  { value: "+10", label: "años en el ramo de las telecomunicaciones" },
-  { value: "24/7", label: "monitoreo y apoyo técnico, los 365 días del año" },
-  { value: "100%", label: "empresa mexicana" },
-  { value: "3G a 5G", label: "instalación y actualización de tecnología en redes celulares" },
+  { value: 10, prefix: "+", suffix: "", label: "años en el ramo" },
+  { value: 100, prefix: "", suffix: "%", label: "mexicana" },
 ];
