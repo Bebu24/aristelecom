@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "lint": "eslint"
+    "lint": "eslint",
+    "fotos": "node scripts/descargar-fotos.mjs"
   },
   "dependencies": {
     "lenis": "^1.3.26",

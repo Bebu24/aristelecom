@@ -1,8 +1,10 @@
+import Image from "next/image";
 import { CountUp } from "@/components/count-up";
 import { NocClock } from "@/components/noc-clock";
 import { ServiceIcon } from "@/components/service-icon";
 import { ServiceRack } from "@/components/service-rack";
 import { allServices, serviceGroups, unitLabel } from "@/content/services";
+import { publicFileExists } from "@/lib/public-file";
 
 function withCounters(text: string) {
   return text.split(/\{(\d+)\}/).map((part, i) => (i % 2 === 1 ? <CountUp key={i} value={Number(part)} /> : part));
@@ -58,6 +60,17 @@ export function Services() {
                       </ul>
                     )}
                     {service.clock && <NocClock />}
+                    {service.photo && publicFileExists(`fotos/${service.photo.file}`) && (
+                      <div className="relative mt-6 aspect-[16/9] overflow-hidden rounded-2xl ring-1 ring-line">
+                        <Image
+                          src={`/fotos/${service.photo.file}`}
+                          alt={service.photo.alt}
+                          fill
+                          sizes="(min-width: 1024px) 45vw, 100vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               </article>
