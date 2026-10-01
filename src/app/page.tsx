@@ -4,6 +4,8 @@ import { About } from "@/components/about";
 import { Services } from "@/components/services";
 import { Contact } from "@/components/contact";
 import { SiteFooter } from "@/components/site-footer";
+import { LeadDrawer } from "@/components/lead-drawer";
+import { leadStyles } from "@/components/lead-theme";
 
 export default function Home() {
   return (
@@ -25,6 +27,7 @@ export default function Home() {
         <Contact />
       </main>
       <SiteFooter />
+      <LeadDrawer styles={leadStyles} />
     </>
   );
 }

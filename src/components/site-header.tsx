@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useSyncExternalStore } from "react";
 import { logoHorizontal } from "@/content/logo";
 import { site } from "@/content/site";
+import { LeadButton } from "@/components/lead-button";
 
 function subscribe(onChange: () => void) {
   window.addEventListener("scroll", onChange, { passive: true });
@@ -46,12 +47,7 @@ export function SiteHeader() {
           <a href="#contacto" className={link}>
             Contacto
           </a>
-          <a
-            href="#contacto"
-            className="ml-2 hidden rounded-xl bg-white px-5 py-3 font-semibold text-ink transition-colors hover:bg-cyan lg:inline-block"
-          >
-            Solicitar Asesoría
-          </a>
+          <LeadButton className="ml-2 hidden rounded-xl bg-white px-5 py-3 font-semibold text-ink transition-colors hover:bg-cyan lg:inline-block">Solicitar Asesoría</LeadButton>
         </nav>
       </div>
     </header>

@@ -326,3 +326,38 @@ html.lenis body {
   transition-duration: 1ms;
   transition-behavior: allow-discrete;
 }
+
+.lead-drawer {
+  margin: 0 0 0 auto;
+  height: 100dvh;
+  max-height: 100dvh;
+  width: min(480px, 100vw);
+  max-width: 100vw;
+  padding: 0;
+  border: 0;
+  box-shadow: -24px 0 60px -20px rgb(0 0 0 / 0.35);
+}
+
+.lead-drawer[open] {
+  animation: lead-in 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.lead-drawer::backdrop {
+  background: rgb(5 10 20 / 0.55);
+  backdrop-filter: blur(4px);
+}
+
+@keyframes lead-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lead-drawer[open] {
+    animation: none;
+  }
+}

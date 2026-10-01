@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import { Swirl } from "@/components/swirl";
+import { LeadButton } from "@/components/lead-button";
 
 const delay = (seconds: number) => ({ "--delay": `${seconds}s` }) as CSSProperties;
 
@@ -27,9 +28,7 @@ export function Hero() {
             Gestión, infraestructura, instalación y mantenimiento.
           </p>
           <div className="rise mt-10 flex flex-wrap gap-3" style={delay(0.25)}>
-            <a href="#contacto" className="rounded-xl bg-white px-6 py-4 text-[17px] font-semibold text-ink transition-colors hover:bg-cyan">
-              Solicitar Asesoría
-            </a>
+            <LeadButton className="rounded-xl bg-white px-6 py-4 text-[17px] font-semibold text-ink transition-colors hover:bg-cyan">Solicitar Asesoría</LeadButton>
             <a
               href="#servicios"
               className="rounded-xl px-6 py-4 text-[17px] font-semibold text-white ring-1 ring-inset ring-white/20 transition-colors hover:bg-white/5"
