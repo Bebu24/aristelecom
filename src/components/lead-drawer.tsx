@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState, useSyncExternalStore, type FormEvent } from "react";
 import { useLenis } from "lenis/react";
 import { closeLead, isLeadOpen, subscribeLead } from "@/components/lead-store";
@@ -47,7 +48,7 @@ export type LeadStyles = {
 
 type Status = "idle" | "sending" | "sent" | "error";
 
-export function LeadDrawer({ styles }: { styles: LeadStyles }) {
+export function LeadDrawer({ styles, company }: { styles: LeadStyles; company: string }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const open = useSyncExternalStore(subscribeLead, isLeadOpen, () => false);
   const [status, setStatus] = useState<Status>("idle");
@@ -197,6 +198,13 @@ export function LeadDrawer({ styles }: { styles: LeadStyles }) {
               <button type="submit" disabled={status === "sending"} className={`mt-2 ${styles.button}`}>
                 {status === "sending" ? "Enviando…" : "Enviar"}
               </button>
+              <p className={styles.status}>
+                {company} usa tus datos solo para responder tu solicitud. Consulta el{" "}
+                <Link href="/aviso-de-privacidad" target="_blank" rel="noopener" className="font-semibold underline underline-offset-2">
+                  Aviso de Privacidad
+                </Link>
+                .
+              </p>
               <p aria-live="polite" className={styles.status}>
                 {status === "error" && "No se pudo enviar. Intenta de nuevo."}
               </p>

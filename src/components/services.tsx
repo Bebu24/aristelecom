@@ -24,7 +24,7 @@ export function Services() {
         </h2>
         <div className="mt-12 grid grid-cols-1 gap-12 lg:mt-16 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
-            <div className="lg:sticky lg:top-32">
+            <div className="lg:sticky lg:top-28">
               <ServiceRack groups={rackGroups} />
             </div>
           </div>

@@ -1,5 +1,6 @@
+import Link from "next/link";
 import { ContactForm } from "@/components/contact-form";
-import { site, mailto } from "@/content/site";
+import { site } from "@/content/site";
 
 const formStyles = {
   label: "text-[15px] font-medium text-text-soft",
@@ -25,16 +26,16 @@ export function Contact() {
                 <p className="mt-6 max-w-[40ch] text-lg leading-relaxed text-text-soft md:text-xl">
                   Escríbenos para solicitar información sobre cualquiera de nuestros servicios.
                 </p>
-                <p className="mt-10 text-[15px] text-text-soft">También puedes escribir a</p>
-                <a
-                  href={mailto}
-                  className="mt-2 inline-block break-all font-display text-2xl font-semibold text-white underline decoration-white/30 decoration-2 underline-offset-8 transition-colors hover:decoration-cyan md:text-3xl"
-                >
-                  {site.email}
-                </a>
               </div>
               <div className="lg:col-span-7">
-                <ContactForm styles={formStyles} email={site.email} />
+                <ContactForm styles={formStyles} />
+              <p className="mt-6 text-[14px] leading-relaxed text-text-soft">
+                {site.legalName} usa tus datos solo para responder tu solicitud. Consulta el{" "}
+                <Link href="/aviso-de-privacidad" target="_blank" rel="noopener" className="font-semibold text-white underline underline-offset-2">
+                  Aviso de Privacidad
+                </Link>
+                .
+              </p>
               </div>
             </div>
           </div>

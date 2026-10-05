@@ -6,6 +6,7 @@ import { Contact } from "@/components/contact";
 import { SiteFooter } from "@/components/site-footer";
 import { LeadDrawer } from "@/components/lead-drawer";
 import { leadStyles } from "@/components/lead-theme";
+import { site } from "@/content/site";
 
 export default function Home() {
   return (
@@ -27,7 +28,7 @@ export default function Home() {
         <Contact />
       </main>
       <SiteFooter />
-      <LeadDrawer styles={leadStyles} />
+      <LeadDrawer styles={leadStyles} company={site.legalName} />
     </>
   );
 }

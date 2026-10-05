@@ -11,7 +11,7 @@ export type ContactFormStyles = {
   status: string;
 };
 
-export function ContactForm({ styles, email }: { styles: ContactFormStyles; email: string }) {
+export function ContactForm({ styles }: { styles: ContactFormStyles }) {
   const [status, setStatus] = useState<Status>("idle");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -60,7 +60,7 @@ export function ContactForm({ styles, email }: { styles: ContactFormStyles; emai
         </button>
         <p role="status" aria-live="polite" className={styles.status}>
           {status === "sent" && "Gracias, tu consulta se envió."}
-          {status === "error" && `No se pudo enviar. Intenta de nuevo o escribe a ${email}.`}
+          {status === "error" && "No se pudo enviar. Intenta de nuevo."}
         </p>
       </div>
     </form>

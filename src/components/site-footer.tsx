@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { logoHorizontal } from "@/content/logo";
 import { site } from "@/content/site";
@@ -13,7 +14,7 @@ export function SiteFooter() {
           height={logoHorizontal.height}
           className="h-10 w-auto self-start md:self-auto"
         />
-        <nav aria-label="Pie de página" className="flex gap-6 text-[15px] font-medium text-white">
+        <nav aria-label="Pie de página" className="flex flex-wrap gap-x-6 gap-y-2 text-[15px] font-medium text-white">
           <a href="#nosotros" className="transition-colors hover:text-cyan">
             Nosotros
           </a>
@@ -23,6 +24,9 @@ export function SiteFooter() {
           <a href="#contacto" className="transition-colors hover:text-cyan">
             Contacto
           </a>
+          <Link href="/aviso-de-privacidad" className="transition-colors hover:text-cyan">
+            Aviso de Privacidad
+          </Link>
         </nav>
         <p className="text-[14px] text-text-soft">{site.legalName}</p>
       </div>

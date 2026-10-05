@@ -28,11 +28,11 @@ export function ServiceRack({ groups }: { groups: RackGroup[] }) {
 
   let index = 0;
   return (
-    <nav aria-label="Servicios" className="rack">
+    <nav aria-label="Servicios" className="rack" data-lenis-prevent>
       {groups.map((group) => (
         <div key={group.name} className="rack-group">
           <p className="rack-group-name">{group.name}</p>
-          <ul className="space-y-1.5">
+          <ul className="space-y-1">
             {group.units.map((unit) => {
               const i = index++;
               return (

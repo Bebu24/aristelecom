@@ -1,13 +1,13 @@
 export const site = {
   name: "Aristelecom",
   legalName: "Aristelecom, S.A. de C.V.",
-  // Placeholder: reemplazar por el correo real antes de publicar.
-  email: "correo@ejemplo.com",
+  // Pendiente: domicilio del responsable para el aviso de privacidad (obligatorio).
+  domicilio: "[DOMICILIO PENDIENTE]",
+  privacyEmail: "ventas@aristelecom.mx",
   description:
     "Empresa 100% mexicana de servicios de telecomunicaciones: gestión, infraestructura, instalación y mantenimiento para todo tipo de redes.",
 } as const;
 
-export const mailto = `mailto:${site.email}`;
 
 export const facts = [
   { value: 10, prefix: "+", suffix: "", label: "años en el ramo" },
