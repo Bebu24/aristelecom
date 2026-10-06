@@ -11,7 +11,7 @@ function subscribe(onChange: () => void) {
   return () => window.removeEventListener("scroll", onChange);
 }
 
-const link = "rounded-lg px-2.5 py-2 sm:px-3 text-text-soft transition-colors hover:bg-white/5 hover:text-white";
+const link = "whitespace-nowrap rounded-lg px-2.5 py-2 sm:px-3 text-text-soft transition-colors hover:bg-white/5 hover:text-white";
 
 export function SiteHeader() {
   const scrolled = useSyncExternalStore(
@@ -41,11 +41,8 @@ export function SiteHeader() {
           <a href="#nosotros" className={`hidden sm:block ${link}`}>
             Nosotros
           </a>
-          <a href="#servicios" className={`max-[379px]:hidden ${link}`}>
+          <a href="#servicios" className={link}>
             Servicios
-          </a>
-          <a href="#contacto" className={link}>
-            Contacto
           </a>
           <LeadButton className="ml-2 hidden rounded-xl bg-white px-5 py-3 font-semibold text-ink transition-colors hover:bg-cyan lg:inline-block">Solicitar Asesoría</LeadButton>
         </nav>

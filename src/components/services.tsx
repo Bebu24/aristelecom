@@ -34,7 +34,7 @@ export function Services() {
                 key={service.slug}
                 id={service.slug}
                 aria-labelledby={`${service.slug}-titulo`}
-                className="border-b border-line py-10 first:pt-0 last:border-b-0 md:py-12 md:first:pt-0"
+                className="service-article border-b border-line py-10 first:pt-0 last:border-b-0 md:py-12 md:first:pt-0"
               >
                 <div className="flex items-start gap-5">
                   <div className="grid size-14 shrink-0 place-items-center rounded-2xl bg-surface ring-1 ring-line">

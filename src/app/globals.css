@@ -29,8 +29,33 @@
 
 @layer base {
   html {
-    scroll-padding-top: 96px;
+    scroll-padding-top: 81px;
     color-scheme: dark;
+  }
+
+  @media (min-width: 768px) {
+    html {
+      scroll-padding-top: 97px;
+    }
+  }
+
+  /* a service lands with its text at the same height, level with the rack */
+  .service-article {
+    scroll-margin-top: 16px;
+  }
+
+  .service-article:first-child {
+    scroll-margin-top: 56px;
+  }
+
+  @media (min-width: 768px) {
+    .service-article {
+      scroll-margin-top: 15px;
+    }
+
+    .service-article:first-child {
+      scroll-margin-top: 63px;
+    }
   }
 
   body {
@@ -109,9 +134,6 @@
     position: relative;
     border-radius: 24px;
     padding: 14px 36px;
-    max-height: calc(100vh - 8rem);
-    overflow-y: auto;
-    scrollbar-width: thin;
     background: linear-gradient(180deg, #161a33, #0f1227);
     box-shadow:
       inset 0 0 0 1px rgb(255 255 255 / 0.07),
@@ -146,6 +168,7 @@
     padding-left: 4px;
     font-family: var(--font-space), sans-serif;
     font-size: 17px;
+    line-height: 1.2;
     font-weight: 600;
     letter-spacing: -0.01em;
     color: #fff;
@@ -155,7 +178,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    height: clamp(28px, calc((100vh - 270px) / 11), 46px);
+    height: clamp(26px, calc((100vh - 272px) / 11), 46px);
     padding: 0 14px;
     border-radius: 10px;
     background: var(--surface-2);

@@ -14,16 +14,7 @@ export function SiteFooter() {
           height={logoHorizontal.height}
           className="h-10 w-auto self-start md:self-auto"
         />
-        <nav aria-label="Pie de página" className="flex flex-wrap gap-x-6 gap-y-2 text-[15px] font-medium text-white">
-          <a href="#nosotros" className="transition-colors hover:text-cyan">
-            Nosotros
-          </a>
-          <a href="#servicios" className="transition-colors hover:text-cyan">
-            Servicios
-          </a>
-          <a href="#contacto" className="transition-colors hover:text-cyan">
-            Contacto
-          </a>
+        <nav aria-label="Pie de página" className="text-[15px] font-medium text-white">
           <Link href="/aviso-de-privacidad" className="transition-colors hover:text-cyan">
             Aviso de Privacidad
           </Link>
