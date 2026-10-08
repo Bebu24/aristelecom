@@ -36,42 +36,42 @@ export function Services() {
                 aria-labelledby={`${service.slug}-titulo`}
                 className="service-article border-b border-line py-10 first:pt-0 last:border-b-0 md:py-12 md:first:pt-0"
               >
-                <div className="flex items-start gap-5">
-                  <div className="grid size-14 shrink-0 place-items-center rounded-2xl bg-surface ring-1 ring-line">
-                    <ServiceIcon name={service.icon} className="size-7" />
+                <div className="flex items-center gap-3">
+                  <div className="grid size-11 shrink-0 place-items-center rounded-xl bg-surface ring-1 ring-line">
+                    <ServiceIcon name={service.icon} className="size-6" />
                   </div>
-                  <div className="min-w-0">
-                    <p className="font-display text-[13px] font-medium tracking-[0.08em] text-text-soft">{unitLabel(service.slug)}</p>
-                    <h3
-                      id={`${service.slug}-titulo`}
-                      className="mt-1 font-display text-2xl font-semibold tracking-[-0.02em] text-white md:text-[2rem] md:leading-tight"
-                    >
-                      {service.title}
-                    </h3>
-                    {service.lead && <p className="mt-3 text-lg leading-relaxed text-text-soft">{service.lead}</p>}
-                    {service.items.length > 0 && (
-                      <ul className="mt-5 grid gap-3">
-                        {service.items.map((item) => (
-                          <li key={item} className="flex gap-3 text-[17px] leading-snug text-text">
-                            <span aria-hidden="true" className="gradient-dot mt-[0.45em] size-2 shrink-0 rounded-full" />
-                            <span>{withCounters(item)}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                    {service.clock && <NocClock />}
-                    {service.photo && publicFileExists(`fotos/${service.photo.file}`) && (
-                      <div className="relative mt-6 aspect-[16/9] overflow-hidden rounded-2xl ring-1 ring-line">
-                        <Image
-                          src={`/fotos/${service.photo.file}`}
-                          alt={service.photo.alt}
-                          fill
-                          sizes="(min-width: 1024px) 45vw, 100vw"
-                          className="object-cover"
-                        />
-                      </div>
-                    )}
-                  </div>
+                  <p className="font-display text-[13px] font-medium tracking-[0.08em] text-text-soft">{unitLabel(service.slug)}</p>
+                </div>
+                <div className="min-w-0">
+                  <h3
+                    id={`${service.slug}-titulo`}
+                    className="mt-4 font-display text-2xl font-semibold leading-tight tracking-[-0.02em] text-white md:whitespace-nowrap md:text-[clamp(1.5rem,3.6vw,2rem)] lg:text-[clamp(1.25rem,2vw,2rem)]"
+                  >
+                    {service.title}
+                  </h3>
+                  {service.lead && <p className="mt-3 text-lg leading-relaxed text-text-soft">{service.lead}</p>}
+                  {service.items.length > 0 && (
+                    <ul className="mt-5 grid gap-3">
+                      {service.items.map((item) => (
+                        <li key={item} className="flex gap-3 text-[17px] leading-snug text-text">
+                          <span aria-hidden="true" className="gradient-dot mt-[0.45em] size-2 shrink-0 rounded-full" />
+                          <span>{withCounters(item)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {service.clock && <NocClock />}
+                  {service.photo && publicFileExists(`fotos/${service.photo.file}`) && (
+                    <div className="relative mt-6 aspect-[16/9] overflow-hidden rounded-2xl ring-1 ring-line">
+                      <Image
+                        src={`/fotos/${service.photo.file}`}
+                        alt={service.photo.alt}
+                        fill
+                        sizes="(min-width: 1024px) 45vw, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                  )}
                 </div>
               </article>
             ))}

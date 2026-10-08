@@ -42,6 +42,7 @@ const groups: { name: string; services: ServiceInput[] }[] = [
         lead: "Coordinación, logística y control de proyectos en telecomunicaciones.",
         items: ["Personal y experiencia para llevar tus proyectos de inicio a fin"],
         icon: "gestion",
+        photo: { file: "gestion-proyectos.jpg", alt: "Equipo de trabajo planeando un proyecto en un pizarrón" },
       },
       {
         name: "Switching y Routing",
@@ -87,6 +88,7 @@ const groups: { name: string; services: ServiceInput[] }[] = [
           "Mantenimientos preventivos, correctivos y de emergencia",
         ],
         icon: "wireless",
+        photo: { file: "redes-inalambricas.jpg", alt: "Antena parabólica de comunicaciones al atardecer" },
       },
     ],
   },
@@ -123,6 +125,7 @@ const groups: { name: string; services: ServiceInput[] }[] = [
           "Apoyo a situaciones emergentes, con traslados, seguimiento de operación y recargas de combustible en cualquier parte del país, hasta {2000} por sitio",
         ],
         icon: "respaldo",
+        photo: { file: "respaldo-electrico.jpg", alt: "Técnico trabajando en un tablero eléctrico" },
       },
       {
         name: "Aire Acondicionado",
@@ -130,7 +133,7 @@ const groups: { name: string; services: ServiceInput[] }[] = [
         lead: "Instalación y mantenimiento.",
         items: [],
         icon: "aire",
-        photo: { file: "aire-acondicionado.jpg", alt: "Unidades de aire acondicionado industrial" },
+        photo: { file: "aire-acondicionado.jpg", alt: "Unidad de aire acondicionado instalada en el muro de un edificio" },
       },
       {
         name: "Fibra Óptica",
