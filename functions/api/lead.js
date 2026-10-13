@@ -31,15 +31,16 @@ export async function onRequestPost({ request, env }) {
   const correo = clean(data.correo, 160);
   const telefono = clean(data.telefono, 30);
   const empresa = clean(data.empresa, 120);
+  const requerimiento = clean(data.requerimiento, 1500);
 
-  if (!nombre || !apellido || !empresa || !EMAIL.test(correo) || !TELEFONO.test(telefono)) {
+  if (!nombre || !apellido || !empresa || !requerimiento || !EMAIL.test(correo) || !TELEFONO.test(telefono)) {
     return json({ ok: false, error: "invalid" }, 400);
   }
 
   await env.CRM_DB.prepare(
-    "INSERT INTO leads (sitio, nombre, apellido, correo, telefono, empresa) VALUES (?, ?, ?, ?, ?, ?)",
+    "INSERT INTO leads (sitio, nombre, apellido, correo, telefono, empresa, requerimiento) VALUES (?, ?, ?, ?, ?, ?, ?)",
   )
-    .bind(SITIO, nombre, apellido, correo, telefono, empresa)
+    .bind(SITIO, nombre, apellido, correo, telefono, empresa, requerimiento)
     .run();
 
   return json({ ok: true });

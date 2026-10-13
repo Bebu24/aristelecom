@@ -24,7 +24,7 @@ export function PrivacyNotice({ company, related, classes }: PrivacyNoticeProps)
         ← Volver al inicio
       </Link>
       <h1 className={`mt-8 ${classes.title}`}>Aviso de Privacidad</h1>
-      <p className={`mt-3 ${classes.meta}`}>Última actualización: 6 de octubre de 2026</p>
+      <p className={`mt-3 ${classes.meta}`}>Última actualización: 12 de octubre de 2026</p>
 
       <h2 className={h2}>Responsable</h2>
       <p className={p}>
@@ -35,7 +35,7 @@ export function PrivacyNotice({ company, related, classes }: PrivacyNoticeProps)
       <h2 className={h2}>Datos que Recabamos</h2>
       <p className={p}>
         Cuando envías una solicitud desde la ventana “Solicitar Asesoría”, recabamos tu nombre, apellido, correo electrónico, número de
-        teléfono y empresa. No recabamos datos personales sensibles.
+        teléfono, empresa y la descripción de tu requerimiento. No recabamos datos personales sensibles.
       </p>
 
       <h2 className={h2}>Para Qué Usamos tus Datos</h2>

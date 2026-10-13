@@ -88,6 +88,7 @@ export function LeadDrawer({ styles, company }: { styles: LeadStyles; company: s
           correo: data.get("correo"),
           telefono: `+${actual.codigo} ${String(data.get("telefono") ?? "").trim()}`,
           empresa: data.get("empresa"),
+          requerimiento: data.get("requerimiento"),
           sitio: data.get("sitio"),
         }),
       });
@@ -188,6 +189,10 @@ export function LeadDrawer({ styles, company }: { styles: LeadStyles; company: s
               <label className="grid gap-2">
                 <span className={styles.label}>Empresa</span>
                 <input name="empresa" type="text" autoComplete="organization" required maxLength={120} className={styles.field} />
+              </label>
+              <label className="grid gap-2">
+                <span className={styles.label}>Describa su Requerimiento</span>
+                <textarea name="requerimiento" required rows={3} maxLength={1500} className={`block resize-y ${styles.field}`} />
               </label>
               <div aria-hidden="true" className="absolute -left-[9999px] top-0 size-px overflow-hidden">
                 <label>
